@@ -37,3 +37,16 @@ function highlight(){
         }
     }
 }
+
+// smooth scrolling
+//when the user click on the li in ul will take the action
+ul.addEventListener('click', (evt) => {
+    //first thing is to display the href link
+    evt.preventDefault();
+    //and then go the the selectedSection when clicking on it in the navBar link
+    const selectedSection = document.getElementById(evt.target.getAttribute('href').substring(1));
+    selectedSection.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    })
+})
